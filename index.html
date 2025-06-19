@@ -89,5 +89,25 @@
       }
     }
   </script>
-</body>
+<script>
+  const slova1 = ["kyber", "mecha", "neuro", "tekno", "žbluňk", "koko", "psycho", "glitch"];
+  const slova2 = ["drtič", "kokolek", "mozek", "nátěr", "kretén", "šrot", "vypínač", "píchanec"];
+
+  function vygeneruj() {
+    const random1 = slova1[Math.floor(Math.random() * slova1.length)];
+    const random2 = slova2[Math.floor(Math.random() * slova2.length)];
+    const vystup = document.getElementById("vystup");
+    vystup.textContent = ${random1}-${random2};
+  }
+
+  function ulozOblibene() {
+    const vystup = document.getElementById("vystup").textContent;
+    if (vystup) {
+      const ul = document.getElementById("oblibene");
+      const li = document.createElement("li");
+      li.textContent = vystup;
+      ul.appendChild(li);
+    }
+  }
+</script></body>
 </html>
