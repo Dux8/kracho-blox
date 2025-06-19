@@ -55,7 +55,7 @@
   </style>
 </head>
 <body>
-  <img src="logo_final_krachoblox2077.png" alt="Kracho-Blox Logo" width="300" style="margin-bottom: 20px;" />
+  <img src="logo_final_krachoblox.png" alt="Kracho-Blox Logo" width="300" style="margin-bottom: 20px;" />
   <h1>KRACHO-BLOX 2077</h1>
   <div class="section generator">
     <p>Vygeneruj si sprosté slovo budoucnosti:</p>
