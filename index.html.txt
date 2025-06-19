@@ -1,16 +1,16 @@
-index.html
 <!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KRAKCHO-BLOX 2077</title>
+  <title>KRACHO-BLOX 2077</title>
   <style>
     body {
       background-color: #111;
       color: #0f0;
       font-family: 'Courier New', monospace;
       padding: 20px;
+      text-align: center;
     }
     h1 {
       font-size: 3em;
@@ -25,6 +25,7 @@ index.html
       border: 1px solid #444;
       border-radius: 5px;
       max-width: 500px;
+      margin: 0 auto;
     }
     .output {
       margin-top: 10px;
@@ -40,7 +41,6 @@ index.html
       color: white;
       font-size: 1em;
       cursor: pointer;
-      margin-right: 10px;
     }
     button:hover {
       background-color: #ff6666;
@@ -51,44 +51,42 @@ index.html
       padding: 10px;
       border-radius: 5px;
       color: #fff;
-      max-width: 500px;
     }
   </style>
 </head>
 <body>
-  <h1>KRAKCHO-BLOX 2077</h1>
-
+  <img src="logo_final_krachoblox2077.png" alt="Kracho-Blox Logo" width="300" style="margin-bottom: 20px;" />
+  <h1>KRACHO-BLOX 2077</h1>
   <div class="section generator">
     <p>Vygeneruj si sprosté slovo budoucnosti:</p>
     <button onclick="vygeneruj()">GENERUJ!</button>
     <button onclick="ulozOblibene()">ULOŽ OBLÍBENÉ</button>
     <div class="output" id="vystup"></div>
   </div>
-
   <div class="favorites">
     <h3>Oblíbené sprostoty:</h3>
-    <ul id="oblibeneList"></ul>
+    <ul id="oblibene"></ul>
   </div>
 
   <script>
-    const casti1 = ['mega', 'ultra', 'kyber', 'astro', 'bio', 'koko', 'neuro', 'techno'];
-    const casti2 = ['kokot', 'čurák', 'píčus', 'debil', 'šulin', 'blboun', 'šmejd', 'trubka'];
-
-    let aktualniSlovo = '';
+    const slova1 = ["kyber", "mecha", "neuro", "tekno", "žbluňk", "koko", "psycho", "glitch"];
+    const slova2 = ["drtič", "kokolek", "mozek", "nátěr", "kretén", "šrot", "vypínač", "píchanec"];
 
     function vygeneruj() {
-      const nahodna1 = casti1[Math.floor(Math.random() * casti1.length)];
-      const nahodna2 = casti2[Math.floor(Math.random() * casti2.length)];
-      aktualniSlovo = nahodna1 + '-' + nahodna2;
-      document.getElementById('vystup').textContent = aktualniSlovo;
+      const random1 = slova1[Math.floor(Math.random() * slova1.length)];
+      const random2 = slova2[Math.floor(Math.random() * slova2.length)];
+      const vystup = document.getElementById("vystup");
+      vystup.textContent = ${random1}-${random2};
     }
 
     function ulozOblibene() {
-      if (aktualniSlovo === '') return;
-      const seznam = document.getElementById('oblibeneList');
-      const polozka = document.createElement('li');
-      polozka.textContent = aktualniSlovo;
-      seznam.appendChild(polozka);
+      const vystup = document.getElementById("vystup").textContent;
+      if (vystup) {
+        const ul = document.getElementById("oblibene");
+        const li = document.createElement("li");
+        li.textContent = vystup;
+        ul.appendChild(li);
+      }
     }
   </script>
 </body>
