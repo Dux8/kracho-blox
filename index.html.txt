@@ -54,7 +54,26 @@
     }
   </style>
 </head>
-<body>
+<body>// Intro efekt
+const introText = document.getElementById("introText");
+const texty = [
+  "Vítej v roce 2077...",
+  "Svět ovládají drony a digitální mafie...",
+  "Ty jsi Kokolek. Poslední android s duší.",
+  "Načítání systému..."
+];
+
+let i = 0;
+const zobrazIntro = setInterval(() => {
+  if (i < texty.length) {
+    introText.textContent = texty[i];
+    i++;
+  } else {
+    clearInterval(zobrazIntro);
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("hlavniObsah").style.display = "block";
+  }
+}, 2000);
   <img src="logo_final_krachoblox.png" alt="Kracho-Blox Logo" width="300" style="margin-bottom: 20px;" />
   <h1>KRACHO-BLOX 2077</h1>
   <div class="section generator">
@@ -89,5 +108,5 @@
       }
     }
   </script>
-</body>
+</div> <!-- konec hlavniObsah --></body>
 </html>
